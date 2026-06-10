@@ -1,0 +1,16 @@
+form-id: 0
+title: "Custom Server Settings"
+icon:
+  type: url
+  data: "https://i.imgur.com/SCi3ZlL.png"
+elements:
+  - type: label
+    text: "Welcome to the server! Customize your experience below."
+  - type: toggle
+    text: "Enable notifications"
+    default: true
+    tag: notifications
+  - type: toggle
+    text: "Enable particles"
+    default: true
+    tag: particles
