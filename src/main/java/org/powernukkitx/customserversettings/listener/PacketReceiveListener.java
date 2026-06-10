@@ -3,16 +3,16 @@ package org.powernukkitx.customserversettings.listener;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.EventPriority;
 import cn.nukkit.event.Listener;
-import cn.nukkit.event.server.PacketReceiveEvent;
-import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsRequestPacket;
-import org.cloudburstmc.protocol.bedrock.packet.ServerSettingsResponsePacket;
+import cn.nukkit.event.server.DataPacketReceiveEvent;
+import cn.nukkit.network.protocol.ServerSettingsRequestPacket;
+import cn.nukkit.network.protocol.ServerSettingsResponsePacket;
 import org.powernukkitx.customserversettings.Plugin;
 import org.powernukkitx.customserversettings.event.ServerSettingsSendEvent;
 
 public class PacketReceiveListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
-    private void on(PacketReceiveEvent event) {
+    private void on(DataPacketReceiveEvent event) {
         var player = event.getPlayer();
         var packet = event.getPacket();
 
@@ -26,9 +26,9 @@ public class PacketReceiveListener implements Listener {
             if (sendEvent.isCancelled()) return;
 
             var response = new ServerSettingsResponsePacket();
-            response.setFormID(sendEvent.getFormId());
-            response.setFormData(sendEvent.getFormData());
-            player.sendPacket(response);
+            response.setFormId(sendEvent.getFormId());
+            response.setData(sendEvent.getFormData());
+            player.dataPacket(response);
         }
     }
 }

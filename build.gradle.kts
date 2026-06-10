@@ -14,8 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.powernukkitx.protocol:bedrock-codec:3.0.0.Beta7-Debug-SNAPSHOT")
-    compileOnly("org.powernukkitx:server:b-migration-SNAPSHOT")
+    compileOnly("org.powernukkitx:server:2.0.0-SNAPSHOT")
 }
 
 tasks.jar {
