@@ -2,6 +2,9 @@
 
 A PowerNukkitX plugin that sends a fully customizable server settings form to players when they open the **Settings** screen in Minecraft: Bedrock Edition. The form content is defined in the plugin config and can also be modified at runtime by other plugins through a custom event.
 
+
+<img src=".github/img.png">
+
 ## How It Works
 
 When the client opens the settings screen, it sends a `ServerSettingsRequestPacket`. This plugin intercepts that packet and replies with a `ServerSettingsResponsePacket` containing a custom form built from `config.yml`. The form appears as a dedicated tab inside the client's settings menu.
